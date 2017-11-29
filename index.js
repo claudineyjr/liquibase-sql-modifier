@@ -2,14 +2,17 @@ const fs = require('fs');
 const variaveis = require('./variaveis');
 const fileName = variaveis.nomeDoArquivo;
 const md5 = require('md5');
-const outputFile = './output.sql';
+const outputFile = variaveis.outputFile;
 const readLine = require('readline')
   .createInterface({
     input: fs.createReadStream(fileName)
   })
 
   const matricula = variaveis.matricula;
-
+fs.writeFile(outputFile, '', (err) => {
+  if(err)
+    throw err;
+})
 fs.stat(fileName, function(err, fileStat) {
   if (err) {
       if (err.code == 'ENOENT') {
