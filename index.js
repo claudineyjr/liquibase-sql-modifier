@@ -29,7 +29,9 @@ fs.stat(fileName, function(err, fileStat) {
           readLine.on('line', (line) => {
             let linhaLiquibase = '--changeset ' + matricula + ':' + toMD5(line) + '\n';
             fs.appendFile(outputFile, linhaLiquibase + line + '\n', (err) => {
-              console.log(err);
+              if(err){
+                throw err;
+              }
             })
           });
           
