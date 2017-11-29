@@ -1,6 +1,7 @@
 const fs = require('fs');
 const variaveis = require('./variaveis');
 const fileName = variaveis.nomeDoArquivo;
+const md5 = require('md5');
 const outputFile = './output.sql';
 const readLine = require('readline')
   .createInterface({
@@ -8,7 +9,6 @@ const readLine = require('readline')
   })
 
   const matricula = variaveis.matricula;
-  var idTransacao = variaveis.numeroInicial;
 
 fs.stat(fileName, function(err, fileStat) {
   if (err) {
@@ -24,7 +24,7 @@ fs.stat(fileName, function(err, fileStat) {
         });
           console.log('File found.');
           readLine.on('line', (line) => {
-            let linhaLiquibase = '--changeset ' + matricula + ':' + idTransacao++ + '\n';
+            let linhaLiquibase = '--changeset ' + matricula + ':' + toMD5(line) + '\n';
             fs.appendFile(outputFile, linhaLiquibase + line + '\n', (err) => {
               console.log(err);
             })
@@ -35,3 +35,8 @@ fs.stat(fileName, function(err, fileStat) {
       }
   }
 });
+
+function toMD5(string) {
+  const date = new Date();
+  return md5(string + date);
+}
