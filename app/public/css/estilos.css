@@ -1,0 +1,30 @@
+.main-div {
+  height: 600px;
+  background-color: #F8F8F8;
+  overflow-y: auto;
+}
+
+body    {
+  padding-top:50px;
+  background-color: #bdc3c7
+}
+
+.infos-div {
+  height: 30px;
+}
+
+.information-input{
+  margin-top: 30px;
+}
+
+.result-label{
+  color: #d35400;
+}
+
+.result-data{
+  color: #2980b9;
+}
+
+.tweets{
+  font-size: 16px;
+}
