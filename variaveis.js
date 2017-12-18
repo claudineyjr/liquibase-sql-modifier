@@ -1,6 +1,6 @@
 module.exports = {
-  matricula: 'Sua matricula aqui', // seu id no sistema
+  matricula: 'X199114', // seu id no sistema
   numeroInicial: 0, // numero inicial desejado
-  nomeDoArquivo: './teste.sql', // nome do arquivo origem
-  outputFile: './teste2.sql'
+  nomeDoArquivo: './scripts/17.MOR-home-and-menu-fix.sql', // nome do arquivo origem
+  outputFile: './out/17.MOR-home-and-menu-fix.sql'
 }

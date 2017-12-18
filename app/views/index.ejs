@@ -13,7 +13,14 @@
 <main>
     <div class="col-md-12 main-div">
         <div class="infos-div col-md-6">
-
+            <form class="information-input" method="POST" action="/file-modifier">
+                <div class="form-group">
+                  <label for="matricula">Matrícula:</label>
+                  <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite seu identificador">
+                  <small id="matriculaHelp" class="form-text text-muted">A matrícula a constar no LiquiBase.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Gerar Arquivos</button>
+            </form>
         </div>
         
     </div>
