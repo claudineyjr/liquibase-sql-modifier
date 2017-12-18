@@ -1,14 +1,7 @@
 const fs = require('fs');
-// const variaveis = require('./variaveis');
 const rl = require('readline');
 const ENVIROMENT = require('./../../enviroment');
 const md5 = require('md5');
-// const outputFile = variaveis.outputFile;
-
-// const readLine = require('readline')
-//   .createInterface({
-//     input: fs.createReadStream(fileName)
-//   })
 
 module.exports.modify = (application, req, res) => {
   let matricula = req.body.matricula;
