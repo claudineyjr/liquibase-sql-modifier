@@ -13,6 +13,14 @@
 <main>
     <div class="col-md-12 main-div">
         <div class="infos-div col-md-6">
+                <% if(message.length > 0) { %>
+                    <div class="alert alert-success">
+                      <strong>Atenção!</strong>
+                      <ul>
+                          <li><%=message[0].msg%></li>
+                      </ul>
+                    </div>
+                  <% } %>
             <form class="information-input" method="POST" action="/file-modifier">
                 <div class="form-group">
                   <label for="matricula">Matrícula:</label>
